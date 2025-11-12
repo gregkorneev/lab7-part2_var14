@@ -1,0 +1,3 @@
+/workspaces/lab7-part2_var14/build/CMakeFiles/app.dir
+/workspaces/lab7-part2_var14/build/CMakeFiles/edit_cache.dir
+/workspaces/lab7-part2_var14/build/CMakeFiles/rebuild_cache.dir

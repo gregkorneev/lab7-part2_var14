@@ -1,0 +1,68 @@
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake-build-*/
+Makefile
+install_manifest.txt
+CTestTestfile.cmake
+Testing/
+_compile/
+*.cmake
+*.ninja
+.ninja_deps
+.ninja_log
+
+# === Compiled objects / libs / bins ===
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+*.pdb
+
+# === Generated app output ===
+/build/bin/
+
+# === Project data (keep folder, ignore generated files) ===
+data/*
+!data/.gitkeep
+
+# === Logs / temp ===
+*.log
+*.tmp
+*.swp
+*.swo
+
+# === VS Code (optional) ===
+.vscode/
+# (если хочешь сохранить рекомендованные расширения:)
+#!.vscode/extensions.json
+
+# === Python (plot script) ===
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+ENV/
+env/
+pip-wheel-metadata/
+
+# === clang/clangd caches (optional) ===
+.clangd/
+.clangd/
+.cache/
+.ccls-cache/
+
+# === Others you might see ===
+compile_commands.json

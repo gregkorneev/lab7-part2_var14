@@ -24,7 +24,7 @@ int main() {
     }
 
     // Основные размеры — только ДП
-    std::vector<int> sizes = {50, 100, 200, 400, 800, 1200, 1600, 2000};
+    std::vector<int> sizes = {50, 100, 200, 400, 800, 1200, 1600, 2000, 5000, 10000, 20000, 40000};
     for (int n : sizes) {
         auto a = gen_random_array(n, rng);
 

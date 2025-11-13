@@ -1,15 +1,22 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('data/timings_lis.csv')
-g = df.groupby('n')['time_ms'].median().reset_index()
+df = pd.read_csv("data/timings_lis.csv")
+
+# медиана времени по каждому n и методу
+g = df.groupby(["method", "n"])["time_ms"].median().reset_index()
 
 plt.figure()
-plt.plot(g['n'], g['time_ms'], marker='o')
-plt.xlabel('Размер массива n')
-plt.ylabel('Время выполнения (мс)')
-plt.title('Зависимость времени работы LIS от размера входных данных')
+for m in ["bruteforce", "dp"]:
+    part = g[g["method"] == m].sort_values("n")
+    if len(part) > 0:
+        plt.plot(part["n"], part["time_ms"], marker="o", label=m)
+
+plt.xlabel("Размер массива n")
+plt.ylabel("Время (мс)")
+plt.title("Сравнение методов LIS")
 plt.grid(True)
+plt.legend()
 plt.tight_layout()
-plt.savefig('data/lis_time.png')
-plt.show()
+plt.savefig("data/lis_time.png")
+plt.close()

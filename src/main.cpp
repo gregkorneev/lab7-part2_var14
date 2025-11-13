@@ -4,24 +4,12 @@
 #include <random>
 #include <chrono>
 #include <fstream>
-
-// ============================================
-// ЛР 7.2 — Вариант 14
-// LIS — Longest Increasing Subsequence
-// Методы:
-//   1) Динамическое программирование O(n²)
-//   2) Наивный перебор (экспонента, только для малого n)
-// ============================================
-
-// Структура результата LIS
 struct LISResult {
     int length;
     std::vector<int> seq;
 };
 
-// -------------------------------------------
 // 1. Основной метод — Динамическое программирование O(n²)
-// -------------------------------------------
 LISResult lis_dp(const std::vector<int>& a) {
     int n = a.size();
     if (n == 0) return {0, {}};
@@ -53,9 +41,7 @@ LISResult lis_dp(const std::vector<int>& a) {
     return {bestLen, seq};
 }
 
-// -------------------------------------------
 // 2. Наивный метод — полный перебор O(2^n)
-// -------------------------------------------
 int lis_bruteforce_len(const std::vector<int>& a) {
     int n = a.size();
     if (n == 0) return 0;
@@ -90,9 +76,7 @@ int lis_bruteforce_len(const std::vector<int>& a) {
     return best;
 }
 
-// -------------------------------------------
 // Генерация массива
-// -------------------------------------------
 std::vector<int> gen_random_array(int n, std::mt19937& rng) {
     std::uniform_int_distribution<int> dist(-10000, 10000);
     std::vector<int> arr(n);
@@ -116,9 +100,8 @@ long long measure_ms_bf(const std::vector<int>& a, int& out_len) {
     return std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count();
 }
 
-// -------------------------------------------
+
 // MAIN
-// -------------------------------------------
 int main() {
     std::mt19937 rng(1234567);
 
